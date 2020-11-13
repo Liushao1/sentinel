@@ -1,0 +1,22 @@
+server:
+  port: 8840
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8843
+      ## 是否直接注册到dashboard
+      eager: true
+
+      ## 整合nacos 下发配置
+      datasource:
+        ds:
+          nacos:
+            server-addr: localhost:8848
+            dataId: stn
+            groupId: stn
+            ruleType: flow
+
+  application:
+    name: stn1
